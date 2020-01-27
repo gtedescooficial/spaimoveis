@@ -1,0 +1,21 @@
+<section class="container mt-5">
+    <br>
+    <br>
+    <div class="row featurette animated bounce ">
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> {{ imovel.title | uppercase}} <span class="text-muted"> {{ imovel.bairro }}</span></h2>
+            <hr>
+            <p class="lead"> {{ imovel.subtitle }}</p>
+
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" [src]="imovel.img" [alt]="imovel.title" [title]="imovel.title">
+            <hr>
+            <button class="btn btn-primary btn-block" [routerLink]="['/imoveis']">Voltar</button>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+</section>
+
+<!-- /END THE FEATURETTES -->

@@ -1,19 +1,31 @@
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
-import { RouterModule, Routes } from '@angular/router';
-// COMPONENTES
-// import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroeComponent } from './components/heroe/heroe.component';
-import { BuscadorComponent } from './components/buscador/buscador.component';
+// COMPONENTS
+import { HomeComponent } from './components/home/home.component';
+import { ContatoComponent } from './components/contato/contato.component';
+import { ImovelComponent } from './components/imovel/imovel.component';
+import { ImovelsearchComponent} from './components/imovelsearch/imovelsearch.component';
 
-const APP_ROUTES: Routes = [
-  { path: 'home', component: HeroesComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'heroes', component: HeroesComponent },
-  { path: 'heroe/:id', component: HeroeComponent },
-  { path: 'buscar/:termino', component: BuscadorComponent },
 
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'imovel/:id', component: ImovelComponent },
+  { path: 'buscar/:termino', component: ImovelsearchComponent },
+  { path: 'contato', component: ContatoComponent },
+  { path: '**', component: HomeComponent },
+
+  //{ path: 'path/:routeParam', component: MyComponent },
+  //{ path: 'staticPath', component: ... },
+  //{ path: '**', component: ... },
+  //{ path: 'oldPath', redirectTo: '/staticPath' },
+  //{ path: ..., component: ..., data: { message: 'Custom' }
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:true});
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class FeatureRoutingModule {}

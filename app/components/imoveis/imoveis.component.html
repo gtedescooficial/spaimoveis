@@ -1,0 +1,30 @@
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- *ngFor="let imovel of imoveis; let i = index" -->
+            <div class="col-md-4" *ngFor="let imovel of imoveis; let i = index">
+                <div class="card mb-4 box-shadow shadow-lg">
+                    <img class="card-img-top" [src]="imovel.img" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text">{{ imovel.title }}.</h4>
+                        <p class="card-text">{{ imovel.subtitle }}.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <!-- <a type="button" [routerLink]="['imovel',i]" class="btn btn-sm btn-outline-secondary">View</a> -->
+                                <button type="button" (click)="verImovel(i)" class="btn btn-sm btn-outline-secondary">View</button>
+
+                            </div>
+                            <small class="text-muted">9 mins</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
